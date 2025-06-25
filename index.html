@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Grandmaster Mindset: An Infographic</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f0f2f5;
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 550px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 300px;
+            max-height: 400px;
+        }
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 350px;
+            }
+        }
+        .flowchart-step {
+            border: 2px solid #665191;
+            padding: 1rem;
+            border-radius: 0.5rem;
+            text-align: center;
+            background-color: #ffffff;
+            color: #003f5c;
+            font-weight: 600;
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+        }
+        .flowchart-arrow {
+            font-size: 2.5rem;
+            color: #a05195;
+            font-weight: 900;
+            line-height: 1;
+        }
+    </style>
+</head>
+<body class="text-gray-800">
+
+    <div class="container mx-auto p-4 md:p-8">
+        
+        <header class="text-center mb-12">
+            <h1 class="text-4xl md:text-6xl font-black text-[#003f5c] mb-2">Beyond the Board</h1>
+            <p class="text-xl md:text-2xl font-semibold text-[#665191]">Decoding the Grandmaster Mindset</p>
+            <p class="max-w-3xl mx-auto mt-4 text-gray-600">
+                What separates a Chess Grandmaster from an amateur is not just knowledge, but a deeply refined mental framework. This infographic explores the nuanced heuristics, patterns, and thought processes GMs use to dominate across the three classical phases of the game.
+            </p>
+        </header>
+
+        <main class="space-y-16">
+
+            <section id="opening" class="bg-white rounded-xl shadow-lg p-6 md:p-8">
+                <div class="text-center mb-8">
+                    <h2 class="text-3xl font-bold text-[#003f5c]">1. The Opening: <span class="text-[#2f4b7c]">Architect of Victory</span></h2>
+                    <p class="max-w-2xl mx-auto mt-2 text-gray-600">
+                        For a Grandmaster, the opening is not a script to be memorized, but a negotiation to create a favorable middlegame. Their goal is to build a position rich with potential, flexibility, and long-term strategic advantages that align with their personal style.
+                    </p>
+                </div>
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+                    <div class="order-2 lg:order-1">
+                        <h3 class="text-xl font-bold text-center mb-4 text-[#2f4b7c]">GM vs. Amateur: Opening Priorities</h3>
+                        <p class="text-center text-sm text-gray-500 mb-4">
+                            A Grandmaster's focus is on understanding deep structural concepts, whereas an amateur often prioritizes rote memorization. This radar chart highlights the fundamental difference in their mental approach from the very first moves.
+                        </p>
+                        <div class="chart-container">
+                            <canvas id="openingRadarChart"></canvas>
+                        </div>
+                    </div>
+                    <div class="order-1 lg:order-2">
+                        <h3 class="text-xl font-bold text-center mb-4 text-[#2f4b7c]">The Grandmaster's Opening Blueprint</h3>
+                        <p class="text-center text-sm text-gray-500 mb-4">
+                            GMs follow a dynamic process, moving from high-level concepts to concrete plans, always considering the future phases of the game.
+                        </p>
+                        <div class="flex flex-col items-center space-y-4">
+                            <div class="flowchart-step w-full max-w-xs">1. Choose Openings for Favorable Structures</div>
+                            <div class="flowchart-arrow">&#8595;</div>
+                            <div class="flowchart-step w-full max-w-xs">2. Prioritize Flexibility & Multiple Plans</div>
+                            <div class="flowchart-arrow">&#8595;</div>
+                            <div class="flowchart-step w-full max-w-xs">3. Solve Problems Pre-emptively (Not Just Memorize)</div>
+                            <div class="flowchart-arrow">&#8595;</div>
+                            <div class="flowchart-step w-full max-w-xs">4. Aim for an Understood Middlegame</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <section id="middlegame" class="bg-white rounded-xl shadow-lg p-6 md:p-8">
+                <div class="text-center mb-8">
+                    <h2 class="text-3xl font-bold text-[#665191]">2. The Middlegame: <span class="text-[#a05195]">The Realm of Magicians</span></h2>
+                    <p class="max-w-2xl mx-auto mt-2 text-gray-600">
+                        Here, raw calculation meets deep intuition. Grandmasters navigate the chaotic middlegame by focusing on accumulating advantages, creating problems for the opponent, and transforming the position in their favor, often with moves that seem mysterious to the untrained eye.
+                    </p>
+                </div>
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+                    <div>
+                        <h3 class="text-xl font-bold text-center mb-4 text-[#a05195]">Middlegame Dominance Factors</h3>
+                        <p class="text-center text-sm text-gray-500 mb-4">
+                           Grandmasters rank dynamic and strategic factors far higher than static material. This chart shows the typical priority GMs place on different elements when formulating a winning middlegame plan. Initiative is the currency of victory.
+                        </p>
+                        <div class="chart-container">
+                            <canvas id="middlegameBarChart"></canvas>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold text-center mb-4 text-[#a05195]">Heuristic: The Principle of Two Weaknesses</h3>
+                         <p class="text-center text-sm text-gray-500 mb-4">
+                           A core GM concept: attacking a single point allows the opponent to consolidate. By creating a second weakness, you stretch their defenses to the breaking point. This is how GMs convert pressure into a win.
+                        </p>
+                        <div class="border-2 border-dashed border-gray-300 rounded-lg p-4 bg-gray-50">
+                            <div class="flex justify-between items-start mb-4">
+                                <div class="text-center w-2/5">
+                                    <p class="font-bold text-[#d45087]">Attack on Weakness #1</p>
+                                    <p class="text-sm">(e.g., Kingside Pawns)</p>
+                                    <div class="text-4xl mt-2 text-[#d45087]">&#10144;</div>
+                                </div>
+                                <div class="text-center w-3/5">
+                                    <p class="font-semibold text-gray-700">Opponent Focuses All Defense Here</p>
+                                    <div class="w-full h-12 bg-green-200 border-2 border-green-400 rounded-md flex items-center justify-center text-green-800 font-bold mt-2">DEFENSES</div>
+                                </div>
+                            </div>
+                            <div class="w-full text-center text-2xl font-bold text-[#665191] my-4">&#8628; Divert & Create</div>
+                             <div class="flex justify-between items-start">
+                                <div class="text-center w-3/5">
+                                    <p class="font-semibold text-gray-700">Defenses are Overloaded & Stretched</p>
+                                     <div class="w-full h-12 bg-red-200 border-2 border-red-400 rounded-md flex items-center justify-center text-red-800 font-bold mt-2">CRITICAL FAILURE</div>
+                                </div>
+                                <div class="text-center w-2/5">
+                                    <p class="font-bold text-[#f95d6a]">Attack on Weakness #2</p>
+                                    <p class="text-sm">(e.g., Weak Queenside Pawn)</p>
+                                    <div class="text-4xl mt-2 text-[#f95d6a]">&#10144;</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="endgame" class="bg-white rounded-xl shadow-lg p-6 md:p-8">
+                <div class="text-center mb-8">
+                    <h2 class="text-3xl font-bold text-[#d45087]">3. The Endgame: <span class="text-[#f95d6a]">The Machine's Precision</span></h2>
+                    <p class="max-w-2xl mx-auto mt-2 text-gray-600">
+                        In the endgame, the game's logic fundamentally shifts. GMs transition from tactical magicians to precise machines. The king becomes an attacker, pawn structure is paramount, and the relative value of pieces can change dramatically.
+                    </p>
+                </div>
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+                    <div class="order-2 lg:order-1">
+                        <h3 class="text-xl font-bold text-center mb-4 text-[#f95d6a]">Endgame Power Dynamics: Value vs. Potential</h3>
+                        <p class="text-center text-sm text-gray-500 mb-4">
+                           A piece's theoretical value means little compared to its situational strength in the endgame. GMs excel at evaluating this potential. A far-advanced passed pawn can be more powerful than a poorly placed rook.
+                        </p>
+                        <div class="chart-container">
+                            <canvas id="endgameBubbleChart"></canvas>
+                        </div>
+                    </div>
+                     <div class="order-1 lg:order-2">
+                        <h3 class="text-xl font-bold text-center mb-4 text-[#f95d6a]">The Shifting Role of the King</h3>
+                        <p class="text-center text-sm text-gray-500 mb-4">
+                           The single most important mental shift in the endgame is the transformation of the king from a liability to be protected into a powerful fighting piece. GMs activate their king at the earliest opportunity.
+                        </p>
+                        <div class="chart-container">
+                            <canvas id="kingRoleDonutChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <footer class="text-center mt-16 pt-8 border-t border-gray-300">
+            <p class="text-lg font-bold text-[#003f5c]">Mastery is a Journey</p>
+            <p class="text-gray-600 max-w-2xl mx-auto">
+                The Grandmaster mindset is not a collection of tricks, but a deep, interconnected understanding of chess principles. It is built through thousands of hours of study, practice, and a relentless pursuit of precision.
+            </p>
+        </footer>
+
+    </div>
+
+    <script>
+        const brilliantBlues = ['#003f5c', '#665191', '#d45087', '#ff7c43', '#ffa600', '#2f4b7c', '#a05195', '#f95d6a'];
+        const brilliantBluesHalfOpacity = [
+            'rgba(0, 63, 92, 0.5)',
+            'rgba(102, 81, 145, 0.5)',
+            'rgba(212, 80, 135, 0.5)',
+            'rgba(255, 124, 67, 0.5)',
+            'rgba(255, 166, 0, 0.5)'
+        ];
+
+        function wrapLabel(str, maxWidth) {
+            if (str.length <= maxWidth) {
+                return str;
+            }
+            const words = str.split(' ');
+            const lines = [];
+            let currentLine = '';
+            for (const word of words) {
+                if ((currentLine + ' ' + word).trim().length > maxWidth && currentLine.length > 0) {
+                    lines.push(currentLine);
+                    currentLine = word;
+                } else {
+                    currentLine = (currentLine + ' ' + word).trim();
+                }
+            }
+            if (currentLine.length > 0) {
+                lines.push(currentLine);
+            }
+            return lines;
+        }
+
+        const tooltipTitleCallback = (tooltipItems) => {
+            const item = tooltipItems[0];
+            let label = item.chart.data.labels[item.dataIndex];
+            if (Array.isArray(label)) {
+                return label.join(' ');
+            }
+            return label;
+        };
+        
+        const commonOptions = {
+            maintainAspectRatio: false,
+            responsive: true,
+            plugins: {
+                legend: {
+                    labels: {
+                        color: '#003f5c',
+                        font: {
+                            weight: 'bold'
+                        }
+                    }
+                },
+                tooltip: {
+                    callbacks: {
+                        title: tooltipTitleCallback
+                    },
+                    backgroundColor: '#003f5c',
+                    titleFont: { size: 14, weight: 'bold' },
+                    bodyFont: { size: 12 },
+                    padding: 10,
+                    cornerRadius: 4
+                }
+            }
+        };
+
+        new Chart(document.getElementById('openingRadarChart'), {
+            type: 'radar',
+            data: {
+                labels: ['Structural Understanding', 'Flexibility & Elasticity', 'Opponent Preparation', 'Rote Memorization', 'Positional Plans'],
+                datasets: [{
+                    label: 'Grandmaster Focus',
+                    data: [9, 8, 8, 3, 9],
+                    borderColor: brilliantBlues[1],
+                    backgroundColor: brilliantBluesHalfOpacity[1],
+                    pointBackgroundColor: brilliantBlues[1],
+                    pointBorderColor: '#fff',
+                    pointHoverBackgroundColor: '#fff',
+                    pointHoverBorderColor: brilliantBlues[1]
+                }, {
+                    label: 'Amateur Focus',
+                    data: [4, 5, 3, 9, 6],
+                    borderColor: brilliantBlues[3],
+                    backgroundColor: brilliantBluesHalfOpacity[3],
+                    pointBackgroundColor: brilliantBlues[3],
+                    pointBorderColor: '#fff',
+                    pointHoverBackgroundColor: '#fff',
+                    pointHoverBorderColor: brilliantBlues[3]
+                }]
+            },
+            options: { ...commonOptions, 
+                scales: {
+                    r: {
+                        angleLines: { color: 'rgba(0, 63, 92, 0.2)' },
+                        grid: { color: 'rgba(0, 63, 92, 0.2)' },
+                        pointLabels: {
+                            color: '#003f5c',
+                            font: { size: 12, weight: 'bold' }
+                        },
+                        ticks: {
+                           color: '#fff',
+                           backdropColor: 'rgba(0, 0, 0, 0.5)',
+                           stepSize: 2
+                        }
+                    }
+                }
+            }
+        });
+
+        new Chart(document.getElementById('middlegameBarChart'), {
+            type: 'bar',
+            data: {
+                labels: ['Initiative & Attack', 'King Safety', 'Piece Activity', 'Exploiting Weaknesses', 'Pawn Structure', 'Material Advantage'],
+                datasets: [{
+                    label: 'Importance Score',
+                    data: [9.5, 9, 8.5, 8, 7, 6],
+                    backgroundColor: [brilliantBlues[2], brilliantBlues[3], brilliantBlues[4], brilliantBlues[1], brilliantBlues[5], brilliantBlues[0]],
+                    borderColor: '#fff',
+                    borderWidth: 2,
+                    borderRadius: 4
+                }]
+            },
+            options: { ...commonOptions, 
+                indexAxis: 'y',
+                plugins: { ...commonOptions.plugins, legend: { display: false } },
+                scales: {
+                    x: {
+                        grid: { display: false, drawBorder: false },
+                        ticks: { color: '#003f5c' }
+                    },
+                    y: {
+                        grid: { color: 'rgba(0, 63, 92, 0.1)' },
+                        ticks: { color: '#003f5c', font: { weight: '600' } }
+                    }
+                }
+            }
+        });
+        
+        new Chart(document.getElementById('kingRoleDonutChart'), {
+            type: 'doughnut',
+            data: {
+                labels: ['Active Fighting Piece', 'Passive/Protected Piece'],
+                datasets: [{
+                    data: [85, 15],
+                    backgroundColor: [brilliantBlues[4], brilliantBlues[0]],
+                    borderColor: '#ffffff',
+                    borderWidth: 4,
+                    hoverOffset: 4
+                }]
+            },
+            options: { ...commonOptions, 
+                cutout: '60%',
+                plugins: { ...commonOptions.plugins, 
+                    legend: {
+                        position: 'bottom',
+                    } 
+                }
+            }
+        });
+
+        const endgameBubbleData = {
+            datasets: [
+                {
+                    label: 'Passed Pawn on 7th',
+                    data: [{ x: 1, y: 9.5, r: 20 }],
+                    backgroundColor: brilliantBlues[4]
+                },
+                {
+                    label: 'Active King',
+                    data: [{ x: 4, y: 8, r: 18 }],
+                    backgroundColor: brilliantBlues[3]
+                },
+                {
+                    label: 'Connected Passed Pawns',
+                    data: [{ x: 2, y: 9, r: 25 }],
+                    backgroundColor: brilliantBlues[2]
+                },
+                 {
+                    label: 'Rook on 7th Rank',
+                    data: [{ x: 5, y: 8.5, r: 22 }],
+                    backgroundColor: brilliantBlues[5]
+                },
+                {
+                    label: 'Trapped Rook',
+                    data: [{ x: 5, y: 2, r: 12 }],
+                    backgroundColor: brilliantBlues[0]
+                },
+                {
+                    label: 'Bishop Pair in Open Position',
+                    data: [{ x: 6, y: 7, r: 15 }],
+                    backgroundColor: brilliantBlues[1]
+                },
+                 {
+                    label: 'Bad Bishop',
+                    data: [{ x: 3, y: 2.5, r: 10 }],
+                    backgroundColor: '#7f8c8d'
+                }
+            ]
+        };
+
+        new Chart(document.getElementById('endgameBubbleChart'), {
+            type: 'bubble',
+            data: endgameBubbleData,
+            options: {
+                ...commonOptions,
+                plugins: {
+                     ...commonOptions.plugins,
+                    legend: { display: false },
+                    tooltip: {
+                        callbacks: {
+                            title: (tooltipItems) => {
+                                return tooltipItems[0].dataset.label;
+                            },
+                            label: (context) => {
+                                let label = [];
+                                label.push(`Value: ${context.raw.x}`);
+                                label.push(`Strength: ${context.raw.y}`);
+                                label.push(`Threat: ${context.raw.r}`);
+                                return label;
+                            }
+                        }
+                    }
+                },
+                scales: {
+                    y: {
+                        title: {
+                            display: true,
+                            text: 'Situational Strength / Potential',
+                            color: '#003f5c',
+                            font: { size: 14, weight: 'bold'}
+                        },
+                        grid: { color: 'rgba(0, 63, 92, 0.1)' },
+                        ticks: { color: '#003f5c' }
+                    },
+                    x: {
+                        title: {
+                            display: true,
+                            text: 'Theoretical Piece Value (Pawn=1)',
+                            color: '#003f5c',
+                            font: { size: 14, weight: 'bold'}
+                        },
+                        grid: { color: 'rgba(0, 63, 92, 0.1)' },
+                        ticks: { color: '#003f5c' }
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>
