@@ -155,12 +155,12 @@
                 </div>
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
                     <div class="order-2 lg:order-1">
-                        <h3 class="text-xl font-bold text-center mb-4 text-[#f95d6a]">Endgame Power Dynamics: Value vs. Potential</h3>
+                        <h3 class="text-xl font-bold text-center mb-4 text-[#f95d6a]">Endgame Power Dynamics: Value vs. Impact</h3>
                         <p class="text-center text-sm text-gray-500 mb-4">
-                           A piece's theoretical value means little compared to its situational strength in the endgame. GMs excel at evaluating this potential. A far-advanced passed pawn can be more powerful than a poorly placed rook.
+                           A piece's inherent "theoretical value" (e.g., a rook is 5 points) can be very different from its actual "endgame impact" based on its position and role. This chart illustrates how Grandmasters assess real power.
                         </p>
                         <div class="chart-container">
-                            <canvas id="endgameBubbleChart"></canvas>
+                            <canvas id="endgameValueImpactChart"></canvas>
                         </div>
                     </div>
                      <div class="order-1 lg:order-2">
@@ -345,86 +345,49 @@
             }
         });
 
-        const endgameBubbleData = {
-            datasets: [
-                {
-                    label: 'Passed Pawn on 7th',
-                    data: [{ x: 1, y: 9.5, r: 20 }],
-                    backgroundColor: brilliantBlues[4]
-                },
-                {
-                    label: 'Active King',
-                    data: [{ x: 4, y: 8, r: 18 }],
-                    backgroundColor: brilliantBlues[3]
-                },
-                {
-                    label: 'Connected Passed Pawns',
-                    data: [{ x: 2, y: 9, r: 25 }],
-                    backgroundColor: brilliantBlues[2]
-                },
-                 {
-                    label: 'Rook on 7th Rank',
-                    data: [{ x: 5, y: 8.5, r: 22 }],
-                    backgroundColor: brilliantBlues[5]
-                },
-                {
-                    label: 'Trapped Rook',
-                    data: [{ x: 5, y: 2, r: 12 }],
-                    backgroundColor: brilliantBlues[0]
-                },
-                {
-                    label: 'Bishop Pair in Open Position',
-                    data: [{ x: 6, y: 7, r: 15 }],
-                    backgroundColor: brilliantBlues[1]
-                },
-                 {
-                    label: 'Bad Bishop',
-                    data: [{ x: 3, y: 2.5, r: 10 }],
-                    backgroundColor: '#7f8c8d'
-                }
-            ]
-        };
-
-        new Chart(document.getElementById('endgameBubbleChart'), {
-            type: 'bubble',
-            data: endgameBubbleData,
+        new Chart(document.getElementById('endgameValueImpactChart'), {
+            type: 'bar',
+            data: {
+                labels: [
+                    wrapLabel('Passed Pawn (7th Rank)', 16),
+                    wrapLabel('Rook (7th Rank)', 16),
+                    wrapLabel('Trapped Rook', 16),
+                    wrapLabel('Bad Bishop', 16)
+                ],
+                datasets: [
+                    {
+                        label: 'Theoretical Value (Pawn = 1)',
+                        data: [1, 5, 5, 3],
+                        backgroundColor: brilliantBlues[0],
+                        borderColor: '#fff',
+                        borderWidth: 1
+                    },
+                    {
+                        label: 'Endgame Impact Score (1-10)',
+                        data: [9.5, 8.5, 2, 2.5],
+                        backgroundColor: brilliantBlues[4],
+                        borderColor: '#fff',
+                        borderWidth: 1
+                    }
+                ]
+            },
             options: {
                 ...commonOptions,
-                plugins: {
-                     ...commonOptions.plugins,
-                    legend: { display: false },
-                    tooltip: {
-                        callbacks: {
-                            title: (tooltipItems) => {
-                                return tooltipItems[0].dataset.label;
-                            },
-                            label: (context) => {
-                                let label = [];
-                                label.push(`Value: ${context.raw.x}`);
-                                label.push(`Strength: ${context.raw.y}`);
-                                label.push(`Threat: ${context.raw.r}`);
-                                return label;
-                            }
-                        }
-                    }
-                },
+                categoryPercentage: 0.8,
+                barPercentage: 0.9,
                 scales: {
-                    y: {
-                        title: {
-                            display: true,
-                            text: 'Situational Strength / Potential',
-                            color: '#003f5c',
-                            font: { size: 14, weight: 'bold'}
-                        },
-                        grid: { color: 'rgba(0, 63, 92, 0.1)' },
-                        ticks: { color: '#003f5c' }
-                    },
                     x: {
+                        grid: { display: false, drawBorder: false },
+                        ticks: { color: '#003f5c', font: { size: 12, weight: 'bold' } }
+                    },
+                    y: {
+                        beginAtZero: true,
+                        max: 10,
                         title: {
                             display: true,
-                            text: 'Theoretical Piece Value (Pawn=1)',
+                            text: 'Score',
                             color: '#003f5c',
-                            font: { size: 14, weight: 'bold'}
+                            font: { size: 14, weight: 'bold' }
                         },
                         grid: { color: 'rgba(0, 63, 92, 0.1)' },
                         ticks: { color: '#003f5c' }
